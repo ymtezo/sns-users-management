@@ -14,8 +14,13 @@ end
 # Initialize Notion service
 def notion_service
   @notion_service ||= begin
-    api_key = ENV['NOTION_API_KEY'] || 'your_notion_api_key_here'
-    database_id = ENV['NOTION_DATABASE_ID'] || 'your_database_id_here'
+    api_key = ENV['NOTION_API_KEY']
+    database_id = ENV['NOTION_DATABASE_ID']
+    
+    unless api_key && database_id
+      raise 'NOTION_API_KEY and NOTION_DATABASE_ID environment variables are required'
+    end
+    
     NotionService.new(api_key, database_id)
   end
 end

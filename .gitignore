@@ -5,6 +5,11 @@ vendor/bundle
 # Ignore database files
 db/*.db
 db/*.sqlite3
+!db/.gitkeep
+
+# Keep database schema/structure files but ignore data
+db/*-shm
+db/*-wal
 
 # Ignore environment files
 .env
