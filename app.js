@@ -267,13 +267,21 @@ class SNSUserManager {
     }
 
     loadData() {
-        const users = localStorage.getItem('snsUsers');
-        const relationships = localStorage.getItem('snsRelationships');
-        const posts = localStorage.getItem('snsPosts');
+        try {
+            const users = localStorage.getItem('snsUsers');
+            const relationships = localStorage.getItem('snsRelationships');
+            const posts = localStorage.getItem('snsPosts');
 
-        if (users) this.users = JSON.parse(users);
-        if (relationships) this.relationships = JSON.parse(relationships);
-        if (posts) this.posts = JSON.parse(posts);
+            if (users) this.users = JSON.parse(users);
+            if (relationships) this.relationships = JSON.parse(relationships);
+            if (posts) this.posts = JSON.parse(posts);
+        } catch (error) {
+            console.error('Failed to load data from localStorage:', error);
+            // Reset to empty state if data is corrupted
+            this.users = [];
+            this.relationships = [];
+            this.posts = [];
+        }
     }
 }
 
