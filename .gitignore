@@ -1,0 +1,23 @@
+# Ignore bundler files
+vendor/bundle
+.bundle
+
+# Ignore database files
+db/*.db
+db/*.sqlite3
+
+# Ignore environment files
+.env
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+tmp/
+*.swp
+*.swo
+*~
+
+# Ignore OS files
+.DS_Store
+Thumbs.db

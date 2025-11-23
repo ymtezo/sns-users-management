@@ -2,6 +2,21 @@
 
 クロスプラットフォームのSNSユーザ管理システムです。主要SNSプラットフォーム（Twitter開始）でのユーザー情報、フォロー関係、興味・関心、投稿などを一元管理します。
 
+## プロジェクト構成
+
+このリポジトリには2つの実装が含まれています：
+
+### 1. フロントエンド版（HTML/CSS/JavaScript）
+- ブラウザで直接実行可能なシングルページアプリケーション
+- LocalStorageを使用したデータ永続化
+- Twitter風のモダンなUI
+
+### 2. Ruby API版（Sinatra）
+- RESTful JSON API
+- SQLite3データベース + ActiveRecord ORM  
+- Notion Database連携版も提供
+- 詳細は [README_RUBY.md](README_RUBY.md) を参照
+
 ## 機能
 
 ### 実装済み機能
@@ -72,6 +87,8 @@
 
 ## 使い方
 
+### フロントエンド版
+
 ### 起動方法
 
 1. リポジトリをクローン
@@ -90,7 +107,34 @@ npx http-server
 
 3. ブラウザで `http://localhost:8000` にアクセス
 
-### 基本的な使い方
+### Ruby API版
+
+詳細なドキュメントは [README_RUBY.md](README_RUBY.md) を参照してください。
+
+```bash
+# 依存関係のインストール
+bundle install
+
+# データベースのセットアップ
+bundle exec ruby db/migrate.rb
+
+# サーバー起動（SQLite版）
+bundle exec ruby app.rb -p 4567
+
+# または Notion連携版
+export NOTION_API_KEY=your_key
+export NOTION_DATABASE_ID=your_db_id
+bundle exec ruby app_notion.rb -p 4568
+```
+
+API エンドポイント例:
+- `GET /api/users` - ユーザー一覧取得
+- `POST /api/users` - ユーザー作成
+- `GET /api/users/:id` - ユーザー詳細取得
+- `PUT /api/users/:id` - ユーザー更新
+- `DELETE /api/users/:id` - ユーザー削除
+
+### 基本的な使い方（フロントエンド版）
 
 1. **ユーザーを追加する**
    - 「ユーザー追加」セクションでフォームに入力
@@ -109,28 +153,49 @@ npx http-server
 
 ## 技術スタック
 
+### フロントエンド版
 - **フロントエンド**: HTML5, CSS3, Vanilla JavaScript
 - **データ保存**: LocalStorage (ブラウザ内ストレージ)
 - **スタイリング**: カスタムCSS（Twitter風デザイン）
+
+### Ruby API版
+- **フレームワーク**: Sinatra 4.0
+- **ORM**: ActiveRecord 7.0
+- **データベース**: SQLite3
+- **Notion連携**: HTTParty + Notion API
+- **CORS**: Rack-CORS
 
 ## プロジェクト構造
 
 ```
 sns-users-management/
-├── index.html          # メインHTMLファイル
-├── styles.css          # スタイルシート
-├── app.js             # アプリケーションロジック
-└── README.md          # このファイル
+├── index.html          # フロントエンドメインHTMLファイル
+├── styles.css          # フロントエンドスタイルシート
+├── app.js             # フロントエンドアプリケーションロジック
+├── app.rb             # Ruby API (SQLite版)
+├── app_notion.rb      # Ruby API (Notion連携版)
+├── config.ru          # Rackup設定
+├── Gemfile            # Ruby依存関係
+├── db/
+│   ├── migrate.rb     # データベースマイグレーション
+│   └── sns_users.db   # SQLiteデータベース
+├── lib/
+│   └── notion_service.rb  # Notion API統合
+├── README.md          # このファイル
+└── README_RUBY.md     # Ruby API詳細ドキュメント
 ```
 
 ## 今後の拡張予定
 
 - [ ] Instagram対応
-- [ ] Facebook対応
+- [ ] Facebook対応  
+- [x] Ruby API with CRUD operations
+- [x] Notion Database integration
 - [ ] データのエクスポート/インポート機能
 - [ ] 検索・フィルタリング機能
 - [ ] グラフ表示（関係性の可視化）
-- [ ] バックエンドAPI連携
+- [ ] フロントエンドとRuby APIの統合
+- [ ] 認証・認可機能
 - [ ] 実際のSNS APIとの連携
 
 ## ライセンス
