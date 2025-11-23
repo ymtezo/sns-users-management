@@ -26,3 +26,17 @@ tmp/
 # Ignore OS files
 .DS_Store
 Thumbs.db
+
+# Android/Cordova build files
+platforms/
+plugins/
+node_modules/
+www/
+
+# Android specific
+*.keystore
+build.json
+google-services.json
+
+# npm
+package-lock.json

@@ -47,6 +47,24 @@ npx http-server
 # その後、ブラウザで http://localhost:8000 を開く
 ```
 
+### 📱 Android APK版（新機能！）
+
+**必要なもの:** Node.js 14+, Java JDK 11+, Android SDK
+
+**手順:**
+
+```bash
+# Linux/Mac
+./build-android.sh
+
+# Windows
+build-android.bat
+```
+
+ビルドされたAPK: `platforms/android/app/build/outputs/apk/debug/app-debug.apk`
+
+**詳細:** [ANDROID_BUILD.md](ANDROID_BUILD.md) を参照
+
 ### 🔧 自動セットアップスクリプト（Linux/Mac）
 
 **必要なもの:** Ruby 3.2+ (Ruby API版を使う場合)

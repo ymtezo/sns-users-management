@@ -47,6 +47,28 @@ chmod +x setup.sh
 
 詳細な手順は [QUICKSTART.md](QUICKSTART.md) をご覧ください。
 
+### 📱 Android APK版（新機能）
+
+**Android アプリとしてビルド:**
+
+```bash
+# Linux/Mac
+./build-android.sh
+
+# Windows  
+build-android.bat
+```
+
+ビルドされたAPKは以下に出力されます:
+- `platforms/android/app/build/outputs/apk/debug/app-debug.apk`
+
+詳細な手順とトラブルシューティング: [ANDROID_BUILD.md](ANDROID_BUILD.md)
+
+**必要な環境:**
+- Node.js 14+
+- Java JDK 11+
+- Android SDK (Android Studioを推奨)
+
 ## プロジェクト構成
 
 このリポジトリには2つの実装が含まれています：
@@ -55,6 +77,7 @@ chmod +x setup.sh
 - ブラウザで直接実行可能なシングルページアプリケーション
 - LocalStorageを使用したデータ永続化
 - Twitter風のモダンなUI
+- **Android APKとしてパッケージ化可能** 🆕
 
 ### 2. Ruby API版（Sinatra）
 - RESTful JSON API
@@ -217,6 +240,10 @@ sns-users-management/
 ├── index.html          # フロントエンドメインHTMLファイル
 ├── styles.css          # フロントエンドスタイルシート
 ├── app.js             # フロントエンドアプリケーションロジック
+├── config.xml         # Cordova/Android設定 🆕
+├── package.json       # Node.js/Cordova依存関係 🆕
+├── build-android.sh   # Android APKビルドスクリプト（Linux/Mac）🆕
+├── build-android.bat  # Android APKビルドスクリプト（Windows）🆕
 ├── app.rb             # Ruby API (SQLite版)
 ├── app_notion.rb      # Ruby API (Notion連携版)
 ├── config.ru          # Rackup設定
@@ -227,6 +254,7 @@ sns-users-management/
 ├── lib/
 │   └── notion_service.rb  # Notion API統合
 ├── README.md          # このファイル
+├── ANDROID_BUILD.md   # Android APKビルドガイド 🆕
 └── README_RUBY.md     # Ruby API詳細ドキュメント
 ```
 
@@ -236,12 +264,14 @@ sns-users-management/
 - [ ] Facebook対応  
 - [x] Ruby API with CRUD operations
 - [x] Notion Database integration
+- [x] **Android APK パッケージング** 🆕
 - [ ] データのエクスポート/インポート機能
 - [ ] 検索・フィルタリング機能
 - [ ] グラフ表示（関係性の可視化）
 - [ ] フロントエンドとRuby APIの統合
 - [ ] 認証・認可機能
 - [ ] 実際のSNS APIとの連携
+- [ ] iOS版アプリ
 
 ## ライセンス
 
