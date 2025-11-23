@@ -2,6 +2,51 @@
 
 クロスプラットフォームのSNSユーザ管理システムです。主要SNSプラットフォーム（Twitter開始）でのユーザー情報、フォロー関係、興味・関心、投稿などを一元管理します。
 
+## 📥 ダウンロードとインストール
+
+### 💾 ダウンロード方法
+
+**方法1: ZIPファイルをダウンロード（推奨）**
+
+<a href="https://github.com/ymtezo/sns-users-management/archive/refs/heads/copilot/add-user-management-for-sns.zip" style="display:inline-block;padding:10px 20px;background:#28a745;color:white;text-decoration:none;border-radius:5px;font-weight:bold;">📦 ZIPをダウンロード</a>
+
+または GitHubページで:
+1. 緑色の「Code」ボタンをクリック
+2. 「Download ZIP」を選択
+3. ダウンロードしたZIPファイルを解凍
+
+**方法2: Gitでクローン**
+
+```bash
+git clone https://github.com/ymtezo/sns-users-management.git
+cd sns-users-management
+```
+
+### クイックスタート
+
+**最も簡単な方法（フロントエンド版）:**
+
+1. **ダウンロード:**
+   - [ZIPファイルをダウンロード](https://github.com/ymtezo/sns-users-management/archive/refs/heads/copilot/add-user-management-for-sns.zip)
+   - または GitHubページの「Code」→「Download ZIP」
+
+2. **解凍して起動:**
+   ```bash
+   # ZIPを解凍後、フォルダ内で
+   # ブラウザで index.html を開く（ダブルクリック）
+   ```
+
+**自動セットアップ（Linux/Mac）:**
+
+```bash
+# ダウンロード・解凍後
+cd sns-users-management
+chmod +x setup.sh
+./setup.sh
+```
+
+詳細な手順は [QUICKSTART.md](QUICKSTART.md) をご覧ください。
+
 ## プロジェクト構成
 
 このリポジトリには2つの実装が含まれています：
