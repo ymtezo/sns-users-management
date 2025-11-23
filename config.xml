@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.sns.usermanagement" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>SNS User Management</name>
+    <description>
+        クロスプラットフォームのSNSユーザ管理システム
+    </description>
+    <author email="dev@example.com" href="https://github.com/ymtezo/sns-users-management">
+        SNS Management Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <preference name="android-minSdkVersion" value="22" />
+        <preference name="android-targetSdkVersion" value="33" />
+        <icon density="ldpi" src="res/icon/android/ldpi.png" />
+        <icon density="mdpi" src="res/icon/android/mdpi.png" />
+        <icon density="hdpi" src="res/icon/android/hdpi.png" />
+        <icon density="xhdpi" src="res/icon/android/xhdpi.png" />
+        <icon density="xxhdpi" src="res/icon/android/xxhdpi.png" />
+        <icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png" />
+    </platform>
+    
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="StatusBarBackgroundColor" value="#1da1f2" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="BackgroundColor" value="#ffffff" />
+    
+    <plugin name="cordova-plugin-whitelist" spec="~1.3.5" />
+    <plugin name="cordova-plugin-statusbar" spec="~3.0.0" />
+    <plugin name="cordova-plugin-splashscreen" spec="~6.0.0" />
+</widget>

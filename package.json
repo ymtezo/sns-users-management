@@ -1,0 +1,34 @@
+{
+  "name": "sns-user-management",
+  "displayName": "SNS User Management",
+  "version": "1.0.0",
+  "description": "Cross-platform SNS user management system for Android",
+  "main": "index.js",
+  "scripts": {
+    "android-build": "cordova build android",
+    "android-run": "cordova run android",
+    "android-release": "cordova build android --release"
+  },
+  "keywords": [
+    "sns",
+    "user-management",
+    "cordova",
+    "android"
+  ],
+  "author": "SNS Management Team",
+  "license": "MIT",
+  "devDependencies": {
+    "cordova": "^12.0.0",
+    "cordova-android": "^12.0.0"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-splashscreen": {}
+    }
+  }
+}
